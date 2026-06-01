@@ -60,6 +60,7 @@ Deploy + QR install: `creations/.../install-qr/README.md`.
 ## D. (Optional) validate your own provider keys
 
 ```powershell
+New-Item -ItemType Directory -Force private | Out-Null
 copy templates\.env.local.example private\.env.local
 notepad private\.env.local   # your own keys only
 . .\scripts\load-env-local.ps1

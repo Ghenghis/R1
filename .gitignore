@@ -1,0 +1,30 @@
+# Secrets — never commit
+private/
+*.env
+*.env.local
+.env
+.env.*
+!*.env.example
+!.env.example
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Firmware dumps and device-private material — never commit or share publicly
+firmware/dumps/
+firmware/official/
+*.img
+*.bin
+*.elf
+*.gpt
+nvram*
+nvdata*
+persist*
+protect*
+userdata*
+
+# OS / editor
+Thumbs.db
+.DS_Store
+*.log

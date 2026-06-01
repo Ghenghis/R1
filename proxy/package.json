@@ -1,0 +1,19 @@
+{
+  "name": "rabbit-r1-safe-proxy",
+  "version": "1.0.0",
+  "description": "Backend proxy that routes the Rabbit R1 Creation app to MiniMax/DeepSeek/SiliconFlow using your own keys.",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check providers/openaiCompatible.js && node --check providers/minimax.js && node --check providers/deepseek.js && node --check providers/siliconflow.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

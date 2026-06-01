@@ -1,0 +1,124 @@
+/* Rabbit R1 screen target: 240 x 282 px, dark UI, large touch targets. */
+:root {
+  --bg: #0a0a0a;
+  --panel: #161616;
+  --fg: #f2f2f2;
+  --muted: #8a8a8a;
+  --accent: #ff5c00; /* rabbit-ish orange */
+  --user: #1f3a2e;
+  --ai: #1c1c24;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+#app {
+  width: 240px;
+  height: 282px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#bar {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--panel);
+}
+
+.pill {
+  flex: 1;
+  font-size: 12px;
+  padding: 6px 4px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  background: #101010;
+  color: var(--fg);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.pill:active {
+  background: var(--accent);
+  color: #000;
+}
+
+#transcript {
+  flex: 1;
+  overflow-y: auto;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.msg {
+  font-size: 12px;
+  line-height: 1.35;
+  padding: 6px 8px;
+  border-radius: 10px;
+  max-width: 95%;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.msg.user {
+  align-self: flex-end;
+  background: var(--user);
+}
+.msg.ai {
+  align-self: flex-start;
+  background: var(--ai);
+}
+.msg.err {
+  align-self: stretch;
+  background: #3a1414;
+  color: #ff9c9c;
+}
+
+#composer {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--panel);
+}
+
+#input {
+  flex: 1;
+  font-size: 13px;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: #101010;
+  color: var(--fg);
+}
+
+#sendBtn {
+  width: 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #000;
+}
+#sendBtn:active {
+  filter: brightness(1.2);
+}
+
+#status {
+  font-size: 10px;
+  color: var(--muted);
+  padding: 2px 6px;
+  min-height: 14px;
+}
